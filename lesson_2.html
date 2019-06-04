@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PSD to HTML program || LESSON 2</title>
+    <meta charset="utf8">
+    <link rel="stylesheet" media="all" href="css/style.css">
+  </head>
+  <body>
+    <section class="wrapper">
+      <h1>Блоки та стрічки</h1>
+      <p>Перше що потрібно запамятати, це те що, стрічки у блокові елементи вкладати можна, а навпаки ні, як приклад уявимо коробку з новорічними іграшками, іграшки в коробку скласти можна, а от коробку у іграшку вже не вийде. <strong>У THML5 винятком є тег <a href="#"></a></strong></p>
+      <p>Звичайно блок у блок вкладати можна.</p>
+      <h3>Блоки <strong>display:block;</strong></h3>
+      <p><strong>div, p, ul, ol, li, h1, h2, h3, h4, h5, h6, form</strong> - блоки по замовчуваню.</p>Блочні елементи займають всю доступну їм ширину, та мають блочну структуру, ширину <strong>width</strong> та висоту <strong>height</strong>.
+      <figure class="figure">
+        <figcaption class="figure-caption">Структура блоку.</figcaption>
+        <p><img class="figure-img img-fluid" src="img/css-box-model.png" alt="Блочна структура"></p>
+      </figure>
+      <p><strong>margin:{*all directions*} || {*vertical*, *horizontal*} || {*top*, *horizontal*, *bottom*} || {*top*, *right*, *bottom*, *left*}</strong> - зовнішній відступ блоку, має на перший погляд дивну властивість "зхлопування маржинів" - вертикальні відступи можуть провалюватися один в одного, та утворювати відступ тотожній більшому з них. Не є частиною блоку.</p>
+      <p><strong>border: *size* *type* *color*</strong> - рамка блоку, відноситься до блоку і впливає на його розміри, створює обведення по контуру.</p>
+      <p><strong>padding:{*all directions*} || {*vertical*, *horizontal*} || {*top*, *horizontal*, *bottom*} || {*top*, *right*, *bottom*, *left*}</strong> - внутрішній відступ, належить до блоку - впливає на розміри, відстань від рамки до контексту, наповнення блоку.</p>
+      <p>Зеленим виділений конткст.</p>
+      <p>По замовчуваню шириша блоку вираховується по контексту, щоб змінити цю поведінку використовується властивість <strong>box-sizing:content-box | border-box | padding-box | inherit</strong> що змінить  логіку визначення розмірів.</p>
+      <h3>Стрічки - лінійні елементи <strong>display:inline;</strong></h3>
+      <p><strong>span, em, i, label, b, strong, a</strong> - лінійні по замовчуваню.</p>
+      <p>У лінійних елементів відсутня блочна модель, їх ширина і висота визначаються виключно контекстом, та лінійними властивостями тексту.</p>
+      <figure class="figure">
+        <figcaption class="figure-caption">Різниця між лінійними та блочними елеметами</figcaption>
+        <p><img class="figure-img img-fluid" src="img/inline-vs-block-boxes.png" alt="Лінійні елементи"></p>
+      </figure>
+      <ul>
+        <li>лінійні елементи поводять себе як слова, та "бачать" пробіли;</li>
+        <li>на них впливають тільки горизонтальні зовнішні відступи;</li>
+        <li>внутрішні відступи працюють тільки візуально;</li>
+      </ul>
+      <h3>Стрічки - лінійно блочні елементи <strong>display:inline-block;</strong></h3>
+      <p>Поєднують властивості поведінки блочних та лінійних елементів, зі всіма плюсами та мінусами.</p>
+      <p>Необхідна розмітка - вставити в середину тега <strong>body</strong></p><code>&lt;p&gt;Lorem ipsum dolor &lt;em&gt;sit amet&lt;/em&gt;, legere assueverit philosophia et sit. &lt;em&gt;At quis tollit molestie mel&lt;/em&gt;, sea in aperiri &lt;em&gt;maiorum invidunt&lt;/em&gt;. Vix vocibus molestiae ut. Cu pri elit minim definitionem, ei vix graecis fuisset. Nec omnium &lt;/p&gt;&lt;p&gt;Lorem ipsum dolor sit amet, legere assueverit philosophia et sit. At quis tollit molestie mel, sea in aperiri maiorum invidunt. Vix vocibus molestiae ut. Cu pri elit minim definitionem, ei vix graecis fuisset. &lt;em&gt;Nec omnium facilis&lt;/em&gt; an eam.&lt;/p&gt;&lt;p&gt; &lt;em&gt; Lorem ipsum dolor sit amet&lt;/em&gt;, &lt;em&gt;legere assueverit philosophia&lt;/em&gt; &lt;/p&gt;</code>
+      <h2>Перші стилі</h2>
+      <p>
+        Щоб додати можливість змінювати властивості відображення елементів створіть поруч з файлом
+        <strong>index.html</strong> теку <strong>css</strong>, а вній файл <strong>style.css</strong>. 
+        Розмітку нижче додайте в середину тега <strong>head</strong>
+      </p><code> &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;</code>
+      <h3>Селектор по тегу</h3><code>
+        tag-name {
+          property: value
+        }</code>
+      <p>Спробуємо додати рамку для всіх елементів, що являються абзацами</p><code>
+        p {
+          border: 2px solid green
+        }</code>
+      <p>Та зафарбувати похилий текст у чевоне</p><code>
+        em{
+          color: red
+        }</code>
+      <p>Якщо нам потрібно декілька властивостей для одного елементу, то розділяйте їх крапкою з комою</p><code>
+        p{
+          margin-bottom: 30px;
+          border: 2px solid green
+        } </code>
+      <p>Спробуйте додати рамку, зовнішні, внутрішні відступи для елементів <strong>em</strong>, та <strong>p</strong></p>
+    </section>
+  </body>
+</html>
