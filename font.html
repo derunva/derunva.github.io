@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PSD to HTML program </title>
+    <meta charset="utf8">
+    <link rel="stylesheet" media="all" href="css/style.css">
+  </head>
+  <body>
+    <section class="wrapper">
+      <h2>Підключення шрифтів</h2>
+      <p>Першим ділом перевірте чи шрифт безпечний, це можна подивитися <a href="http://www.cssfontstack.com/">тут</a>, або <a href="http://www.w3schools.com/cssref/css_websafe_fonts.asp">тут</a>.</p>
+      <p>Безпечний шрифт це коли цей шрифт за замовчуваням постачається у більшості систем по замовчуваню, його можна зразу викликати за допомогою <strong>font-family</strong>.</p>
+      <p>Якщо є сумніви у "безпечності" шрифта, його потрібно підключати, найшвидший спосіб це спробувати знайти його на <a href="https://fonts.google.com/">Google fons</a>.</p>
+      <p>Обравши шрифти та виставивши потрібні налаштування, шрифт підключаємо згенерованим на сайті кодом, щось типу такого <code>&lt;link href=&quot;https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:100,400|Open+Sans&amp;subset=cyrillic&quot; rel=&quot;stylesheet&quot;&gt;</code></p>
+      <p>Підключаєм в <strong>head</strong> і користуємся <strong>font-family: 'Open Sans', sans-serif; font-family: 'Fira Sans Condensed', sans-serif;</strong></p>
+      <p>Якщо на Google font нема потрібних шрифтів потрібно скачати шрифти, вже конвертовані для веб, або звичайний і конвертувати - <a href="https://www.fontsquirrel.com">непоганий сервіс тут</a>.</p>
+      <h2>Робота з текстом </h2>
+      <h3>Для оформлення тексту використовуються теги: </h3>
+      <ul></ul>
+      <li>p абзац - блочний елемент</li>
+      <li>span стрічковий елемент без семантичного навантаження</li>
+      <li>b та strong - теги які виділяють текст "жирним", strong - більш новий тег і за рекомендаціями W3C краще використовувати його, якщо текст не являється семантично важливим(не є ключовою фразою), то ліпше використовувати тег без семантичного навантаженя з стилем font-weight:bold;</li>
+      <li>em та i теги по замовчуванню приміняють до тексту font-style:italic; виділення тексту курсивом, тег em більш новіший, по використаню аналогічні рекомендації як з b та strong</li>
+      <li>SUP — верхній індекс та SUB — нижній індекс. Для повтору поведінки можна використовувати властивість vertical-align:.5em; вертикального вирівнювання.</li>
+      <li>hr тег створює горизонтальну лінію розділювач не має закриваючого тегу</li>
+      <h3>Стилі для роботи з текстом </h3>
+      <h4><strong>font</strong></h4>
+      <ul>
+        <li style="font-size: 2em;">font-size: 2em; </li>
+        <li style="font-weight: 100;">font-weight: 100; жирність шрифту, значення: bold|bolder|lighter|normal|100|200|300|400|500|600|700|800|900</li>
+        <li style="font-style: italic;">font-style: italic; стиль шрифту приймає значення normal|italic</li>
+        <li style="font-family: Arial,sans-serif;">Сімейcтво шрифтів font-family: (окрема тема)</li>
+      </ul>
+      <h4><strong>letter-spacing: 2em</strong></h4>
+      <p style="letter-spacing: 2em;">міжлітерний інтервал  letter-spacing: 2em" <span style="letter-spacing: .5em;">letter-spacing: .5em</span><span style="letter-spacing: -.5em;">letter-spacing: .5em</span>.</p>
+      <h4><strong>line-height: 2em;</strong></h4>
+      <p style="line-height: 2em;">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <h4><strong> text-indent:</strong></h4>
+      <p>text-indent: - зміщення першого рядка тексту в блоці</p>
+      <p style="text-indent: 2em;">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <h4><strong>color:</strong></h4>
+      <p>color: - колір тексту в блоці</p>
+      <p style="color: gray;">задається в HEX значеннях <span style="color: #cc33ff;">#cc33ff</span>, тексовою назвою наприклад для цього блоку використано <span style="color: green;">green</span>, або в <span style="color: rgb(255,0,128);">rgb(255,0,128)</span> та з альфаканалом <span style="color: rgba(255,0,128,.5);">rgba(255,0,128,.5)</span></p>
+      <h4><strong>text-align:</strong></h4>
+      <p>text-align: - вирівнювання тексту по горизонталі має значення:</p>
+      <ul>
+        <li style="text-align:left;">text-align:left; - значення по замовчуванню</li>
+        <li style="text-align:right;">text-align:right; - вирівнювання по правому краю</li>
+        <li style="text-align:center;">text-align:center; - вирівнювання по центру</li>
+        <li style="text-align:justify;">text-align:justify; - вирівнювання по всій ширині працює для тексту де більше одного рядку <br>    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </li>
+      </ul>
+      <h4><strong>vertical-align:</strong></h4>
+      <p>Вертикальне вирівнювання елементу</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation <img style="vertical-align: top;" src="images/1.png" alt=""> ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation <img style="vertical-align: bottom;" src="images/1.png" alt=""> ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation <img style="vertical-align: middle;" src="images/1.png" alt=""> ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </section>
+  </body>
+</html>
