@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PSD to HTML program || LESSON 3</title>
+    <meta charset="utf8">
+    <link rel="stylesheet" media="all" href="css/style.css">
+  </head>
+  <body>
+    <section class="wrapper">
+      <h1>Назви елементів та flex-box</h1><img src="img/profile.jpg" alt="">
+      <p>Спершу потрібно визначити що перед нами для того щоб почати це реалізовувати.</p>
+      <p>
+        На картинці ми бачимо - фотографію користувача, псевдонім, перелік технологій, час взаємодії з сервісом, кількість відгуків,
+        відмови, виконано, кнопка переглянути (напевно буде вести на сторінку цього користувача, його профайл), рейтинг, вподобайки та кнопку додати.
+      </p>
+      <p>Переклавши ці назви англійською отримаєм назви елементів.</p>
+      <pre>
+  &lt;div class=&quot;profile&quot;&gt;
+    &lt;div class=&quot;photo&quot;&gt;
+      фотографія користувача
+    &lt;/div&gt;
+    &lt;div class=&quot;username&quot;&gt;
+      псевдонім
+    &lt;/div&gt;
+    &lt;div class=&quot;skils&quot;&gt;
+      перелік технологій
+    &lt;/div&gt;
+    &lt;div class=&quot;at_service&quot;&gt;
+      час взаємодії з сервісом
+    &lt;/div&gt;
+    &lt;div class=&quot;reviews&quot;&gt;
+      кількість відгуків
+    &lt;/div&gt;
+    &lt;div class=&quot;nav&quot;&gt;
+      кнопки(застилізовані посилання)
+    &lt;/div&gt;
+    &lt;div class=&quot;rating&quot;&gt;
+      рейтинг
+    &lt;/div&gt;
+    &lt;div class=&quot;likes&quot;&gt;
+      вподобайки
+    &lt;/div&gt;
+    &lt;div class=&quot;add&quot;&gt;
+      кнопка додати
+    &lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+      <h2>Групування елементів</h2>
+      <p>Розмітки вище достатньо щоб описати стилі кожного елементу, але не того як вони розміщені, тому їх потрібно згрупувати.</p>
+      <p>Принцип такий - виділяємо горизонтальні групи, та дивимося як вони поділені.</p><img src="img/profile1.jpg" alt="">
+      <p>Наш блок можна поділити по горизонталі на дві колонки - ліву, що містить фотографію і вподобайки та праву, що містить все інше</p>
+      <pre>
+  &lt;div class=&quot;profile&quot;&gt;
+
+
+    &lt;div class=&quot;left&quot;&gt;
+      &lt;div class=&quot;photo&quot;&gt;
+        фотографія користувача
+      &lt;/div&gt;
+      &lt;div class=&quot;likes&quot;&gt;
+        вподобайки
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- кінець лівої частини --&gt;
+
+    &lt;div class=&quot;right&quot;&gt;
+      &lt;div class=&quot;username&quot;&gt;
+        псевдонім
+      &lt;/div&gt;
+      &lt;div class=&quot;skils&quot;&gt;
+        перелік технологій
+      &lt;/div&gt;
+      &lt;div class=&quot;at_service&quot;&gt;
+        час взаємодії з сервісом
+      &lt;/div&gt;
+      &lt;div class=&quot;reviews&quot;&gt;
+        кількість відгуків
+      &lt;/div&gt;
+      &lt;div class=&quot;nav&quot;&gt;
+        кнопки(застилізовані посилання)
+      &lt;/div&gt;
+      &lt;div class=&quot;rating&quot;&gt;
+        рейтинг
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- кінець правої частини --&gt;
+
+    &lt;div class=&quot;add&quot;&gt;
+      кнопка додати
+    &lt;/div&gt;
+    &lt;!-- цю кнопку поки закоментуйте --&gt;
+  &lt;/div&gt;
+</pre>
+      <h2>Flexbox</h2>
+      <p>Щоб поставити ліву та праву частини поруч використовуйте display: flex; у css  для батьківського елемента</p><code>.profile { display: flex} </code>
+      <p>Зараз нам необхідно розібратися як працює <strong>justify-content</strong>, його властивості <strong>flex-start, flex-end, center, space-between, space-around</strong> на даний момент для вас це горизонтальне вирівнювання елементів в середині флекс контейнера.</p>
+      <p>Флекс контейнер елеметн з css властивістю display: flex</p>
+      <p>Та вертикальне вирівнювання <strong>align-items</strong> з властивостями <strong>flex-start, flex-end, center, baseline, stretch</strong> - вертикальне вирівнювання.</p>
+      <p>Для дочірніх елементів флекс контейнера вирористовуйте <strong>flex-grow, flex-shrink, flex-basis</strong>.</p>
+      <p><strong>flex-grow</strong> Визначає ширину flex елемента відносно ширин всіх сусідніх елементів. Приймає число.</p>
+      <p><strong>flex-shrink</strong> Визначає фактор "нарізки" елемента, який вказує на скільки "flex частин" буде зменшуватися елемент щодо інших елементів в flex-контейнері, в тих випадках, коли для нього недостатньо місця в цьому самому контейнері.</p>
+      <p>Коли цей параметр не вказаний в CSS файлі, то він по-дефолту виставлений на 1 і фактор "нарізки" множиться на показник flex-basis</p>
+      <p><strong>flex-basis</strong> - визначає початкову ширину елемента</p>
+      <p><a href="https://flexboxfroggy.com/#uk">Тут</a> можна ознайомитися з flexbox у ігровій формі.</p>
+      <h2>Проблема однакових елементів</h2><img src="img/comment.jpg" alt="">
+      <p>Наприклад коментар містить фотографію користувача, дату публікації, псевдонім, та текст. </p>
+      <p>Виходить що і у коментаря і у профілю будуть .photo, .username, а ще .left та .right. Але виглядають вони по різному, тому нам потрібно ізолювати стилі за допомогою префікса з назви блоку.</p>
+      <pre>
+  &lt;div class=&quot;profile&quot;&gt;
+
+
+    &lt;div class=&quot;profile--left&quot;&gt;
+      &lt;div class=&quot;profile--photo&quot;&gt;
+        фотографія користувача
+      &lt;/div&gt;
+      &lt;div class=&quot;profile--likes&quot;&gt;
+        вподобайки
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- кінець лівої частини --&gt;
+
+    &lt;div class=&quot;profile--right&quot;&gt;
+      &lt;div class=&quot;profile--username&quot;&gt;
+        псевдонім
+      &lt;/div&gt;
+      &lt;div class=&quot;profile--skils&quot;&gt;
+        перелік технологій
+      &lt;/div&gt;
+      &lt;div class=&quot;profile--at_service&quot;&gt;
+        час взаємодії з сервісом
+      &lt;/div&gt;
+      &lt;div class=&quot;profile--reviews&quot;&gt;
+        кількість відгуків
+      &lt;/div&gt;
+      &lt;div class=&quot;profile--nav&quot;&gt;
+        кнопки(застилізовані посилання)
+      &lt;/div&gt;
+      &lt;div class=&quot;profile--rating&quot;&gt;
+        рейтинг
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- кінець правої частини --&gt;
+
+    &lt;div class=&quot;profile--add&quot;&gt;
+      кнопка додати
+    &lt;/div&gt;
+    &lt;!-- цю кнопку поки закоментуйте --&gt;
+  &lt;/div&gt;
+</pre>
+      <h2>Завдання</h2>
+      <p>Користуючись данними кроками пропрацюйте назви не меньше 3х таких карток, це може бути будь-що що ви бачили в інтернеті - товар, оголошення, стаття, пост, коментар і т.д.</p>
+      <p>Використовуючи вже властивості з попередніх занять та по максимуму користуючись flexbox  оформіть ці блоки</p>
+    </section>
+  </body>
+</html>
