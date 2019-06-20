@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PSD to HTML program || LESSON 4</title>
+    <meta charset="utf8">
+    <link rel="stylesheet" media="all" href="css/style.css">
+  </head>
+  <body>
+    <section class="wrapper">
+      <h2>Додаткові стилі</h2>
+      <style>
+        .rounded{
+        border-radius: 5px;
+        background:green;
+        color:white;
+        padding:20px;
+        margin-bottom:20px;
+        }
+        .b-r-50{
+        border-radius: 50%;
+        background:green;
+        color:white;
+        padding:20px;
+        margin-bottom:20px;
+        text-align:center;
+        }
+        .circle{
+        border-radius: 50%;
+        background:green;
+        width:250px;
+        height:250px;
+        color:white;
+        padding:20px;
+        margin-bottom:20px;
+        text-align:center;
+        }
+        .shadow-box{
+        box-shadow: 5px 5px 5px 0 #2DFF03,15px 15px 5px 0 #f85635;
+        padding:20px;
+        width:300px;
+        margin-bottom:40px;
+        }
+        .hover{
+        background: green;
+        padding:20px;
+        margin-bottom:20px;
+        }
+        .hover:hover{
+        background: yellow;
+        }
+        .transition{
+        transition: all 1s ease;
+        }
+      </style>
+      <p>З появою CSS3 для пришвидшеня роботи з його властивостями можна використовувати онлайн сервіси. Наприклад <a href="http://css3generator.com/">тут</a> можна спробувати різні налаштування, побачити зразу результат, та отримати css код.</p>
+      <p><strong>border-radius:</strong> за його допомогою можна скруглювати кути, робити кола, еліпси.</p>
+      <div class="rounded">border-radius: 5px;<br>  background:green;<br>  color:white;<br>  padding:20px;<br>  margin-bottom:20px;</div>
+      <div class="b-r-50">border-radius: 50%;<br>  background:green;<br>  color:white;<br>  padding:20px;<br>  margin-bottom:20px;<br>  text-align:center;</div>
+      <div class="circle">border-radius: 50%;<br>  background:green;<br>  width:250px;<br>  height:250px;<br>  color:white;<br>  padding:20px;<br>  margin-bottom:20px;<br>  text-align:center;</div>
+      <p><strong>box-shadow:</strong> за його допомогою можна створювати зовнішні та внутрішні тіні, а також коли властивість <strong>broder</strong> занята використовувати в якості рамки, але на відміну від border не буде займати місця.</p>
+      <p>Тіні як і фонові зображення можна задавати через кому <strong>box-shadow: 5px 5px 5px 0 #2DFF03,15px 15px 5px 0 #f85635;</strong></p>
+      <div class="shadow-box">box-shadow: 5px 5px 5px 0 #2DFF03,15px 15px 5px 0 #f85635;<br>  padding:20px;<br>  width:300px;<br>  margin-bottom:20px;</div>
+      <p>Комбінуючи таким чином різні налатування тіні можна створювати досить цікаві ефекти, все залежить від вашої уваги.</p>
+      <p><a href="https://habrahabr.ru/post/141658/">Стаття про рамки та заокруглення</a></p>
+      <p><strong style="text-shadow: 3px 3px 5px #1EFF05;">text-shadow: 3px 3px 5px #1EFF05;</strong> тінь тексту, але використавши цей стиль через кому можна виконати <span style="text-shadow: 1px 1px 0px #1EFF05, 1px -1px 0px #1EFF05, -1px 1px 0px #1EFF05, -1px -1px 0px #1EFF05;">обводку тексту</span></p>
+      <p>За допомогою властивості <strong>transition</strong> можна робити плавний перехід від одного css стану в інший.</p>
+      <div class="hover">Звичайний hover</div>
+      <div class="hover transition">hover з transition</div>
+      <p><strong>transform</strong> Дозволяє маніпулювати розміщеням, скрученням, маштабуванням елементів.</p>
+    </section>
+  </body>
+</html>
